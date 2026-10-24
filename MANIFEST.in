@@ -1,0 +1,13 @@
+include README.md CITATION.cff CONTRIBUTING.md SOURCE_PROVENANCE.json .gitattributes .gitignore
+include run_rtt_iclr2027_arrhenius.py run_rtt_iclr2027.sh setup_arrhenius.sh
+include rtt_pipeline.py rtt_frontier.py predict_rtt.py
+include requirements-arrhenius.txt requirements-cpu.txt
+recursive-include docs *.md *.svg
+recursive-include experiments *.py *.sh *.json *.md
+recursive-include configs *.json
+recursive-include scripts *.py *.sh
+recursive-include requirements *.txt
+recursive-include tests *.py
+recursive-include validation *.md *.json *.txt
+recursive-include .github *.yml
+global-exclude __pycache__ *.py[cod] *.pt *.pth *.ckpt

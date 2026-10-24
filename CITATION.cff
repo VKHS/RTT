@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite the Reference-Tail Trust manuscript when using the method."
+title: "Reference-Tail Trust"
+type: software
+version: 1.0.0
+authors:
+  - given-names: Abdolvahab
+    family-names: Khalili Sadaghiani
+  - given-names: Jose
+    family-names: Nunez-Yanez
+preferred-citation:
+  type: article
+  title: "Reference-Tail Trust: Certified Probability Floors for Learned Updates Inside a Deployed Network"
+  authors:
+    - given-names: Abdolvahab
+      family-names: Khalili Sadaghiani
+    - given-names: Jose
+      family-names: Nunez-Yanez
+  year: 2026
+  url: "https://arxiv.org/abs/2609.34904"

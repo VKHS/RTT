@@ -1,0 +1,79 @@
+{
+  "name": "ogbg_molpcba_contractive_diffusion_exact_reference_tail",
+  "dataset": {
+    "name": "ogbg_molpcba",
+    "root": "./data/ogbg_molpcba",
+    "options": {}
+  },
+  "model": {
+    "name": "contractive_diffusion",
+    "T": 5,
+    "hidden": 128,
+    "pooling": "mean",
+    "alpha": 0.1,
+    "tau": 0.9,
+    "w_spec": 0.9
+  },
+  "training": {
+    "epochs": 200,
+    "patience": 30,
+    "lr": 0.002,
+    "weight_decay": 0.0005,
+    "batch_size": 64,
+    "steps_per_epoch": 100,
+    "proposal_steps": 256,
+    "head_steps": 512,
+    "head_lr": 0.001,
+    "fit_temperature": true,
+    "train_incumbent": true
+  },
+  "adaptation": {
+    "backend": "exact_reference_tail",
+    "open_first": 2,
+    "bank_size": 16,
+    "roles": 8,
+    "head_hidden": 64,
+    "probes": 16,
+    "row_trim": 0.8,
+    "omega": 0.9,
+    "rho_x": 1e-06,
+    "H_plus": 0.04,
+    "H_row": 1.0,
+    "kappa_train": 2.0,
+    "covariance_floor": 1e-06,
+    "solver_steps": 24,
+    "line_search_steps": 16,
+    "coefficient_cap": 1.0,
+    "budget_margin": 1e-07,
+    "proposal_kind": "native",
+    "tent_lr": 0.001,
+    "tent_steps": 1
+  },
+  "protocol": {
+    "seed": 1,
+    "query_size": 64,
+    "calibration_calls": 512,
+    "selection_calls": 512,
+    "audit_calls": 2048,
+    "delta_cov": 0.1,
+    "delta": 0.05,
+    "p_star": 0.02,
+    "zeta": 0.0016,
+    "member_multipliers": [
+      1.0,
+      5.0,
+      10.0,
+      25.0,
+      50.0
+    ],
+    "minimum_gain": 0.0,
+    "split_policy": "official_disjoint"
+  },
+  "notes": [
+    "Reconstruction configuration; no original trained weights or unreleased pool IDs are claimed.",
+    "The generic exact-reference-tail backend performs full continuation checks and has different compute costs from the native arxiv tube backend.",
+    "The manuscript names a contractive molecular diffusion incumbent but omits its complete architecture. This variant commits five steps, width 128, mean pooling, alpha 0.1, tau 0.9 and transport spectral norm 0.9. These settings and zeta=0.0016 nats are explicit reconstruction choices; the molecular tolerance was not specified in Table 16. Missing assays stay masked, and custom episodic/reserved results are distinct from full official-test AP.",
+    "Full: 512 calibration calls per configured depth per member, 512 selection calls per member, and 2048 final audit calls; smoke uses explicitly synthetic fixtures.",
+    "Variant contractive_diffusion: the model family is manuscript-motivated; dimensions and omitted implementation details are explicit reconstruction choices."
+  ]
+}

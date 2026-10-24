@@ -1,0 +1,84 @@
+{
+  "name": "twitch_exact_reference_tail",
+  "dataset": {
+    "name": "twitch",
+    "root": "./data/twitch",
+    "options": {
+      "source_domain": "DE",
+      "target_domains": [
+        "ENGB"
+      ],
+      "valid_fraction": 0.2,
+      "seed": 1
+    }
+  },
+  "model": {
+    "name": "appnp",
+    "T": 16,
+    "hidden": 64,
+    "enc_hidden": 64,
+    "alpha": 0.1,
+    "normalization": "mean"
+  },
+  "training": {
+    "epochs": 200,
+    "patience": 30,
+    "lr": 0.002,
+    "weight_decay": 0.0005,
+    "batch_size": 64,
+    "steps_per_epoch": 1,
+    "proposal_steps": 256,
+    "head_steps": 512,
+    "head_lr": 0.001,
+    "fit_temperature": true,
+    "train_incumbent": true
+  },
+  "adaptation": {
+    "backend": "exact_reference_tail",
+    "open_first": 8,
+    "bank_size": 16,
+    "roles": 8,
+    "head_hidden": 64,
+    "probes": 16,
+    "row_trim": 0.8,
+    "omega": 0.9,
+    "rho_x": 1e-06,
+    "H_plus": 0.0775,
+    "H_row": 1.0,
+    "kappa_train": 2.0,
+    "covariance_floor": 1e-06,
+    "solver_steps": 24,
+    "line_search_steps": 16,
+    "coefficient_cap": 1.0,
+    "budget_margin": 1e-07,
+    "proposal_kind": "native",
+    "tent_lr": 0.001,
+    "tent_steps": 1
+  },
+  "protocol": {
+    "seed": 1,
+    "query_size": 512,
+    "calibration_calls": 512,
+    "selection_calls": 512,
+    "audit_calls": 2048,
+    "delta_cov": 0.1,
+    "delta": 0.05,
+    "p_star": 0.02,
+    "zeta": 0.0031,
+    "member_multipliers": [
+      1.0,
+      5.0,
+      10.0,
+      25.0,
+      50.0
+    ],
+    "minimum_gain": 0.0,
+    "split_policy": "official_disjoint"
+  },
+  "notes": [
+    "Reconstruction configuration; no original trained weights or unreleased pool IDs are claimed.",
+    "The generic exact-reference-tail backend performs full continuation checks and has different compute costs from the native arxiv tube backend.",
+    "DE to ENGB is a declared example domain assignment because the RTT manuscript does not identify its exact language graphs. It is not a recovered author split. APPNP is the named model family; T=16, width 64, normalization, source split seed and optimization are explicit choices. This profile uses the exact linear continuation through the generic admission path.",
+    "Full: 512 calibration calls per configured depth per member, 512 selection calls per member, and 2048 final audit calls; smoke uses explicitly synthetic fixtures."
+  ]
+}
