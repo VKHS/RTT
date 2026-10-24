@@ -1,0 +1,15 @@
+........................................................................ [ 33%]
+........................................................................ [ 66%]
+........................................................................ [ 99%]
+..                                                                       [100%]
+=============================== warnings summary ===============================
+tests/test_dataset_pipelines.py::test_separate_dataset_pipeline_and_prediction[ogbn_arxiv]
+  /workspace/scratch/b1ba84ad294d/deliverables/RTT/src/rtt/models.py:91: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/Context.cpp:848.)
+    return torch.sparse_coo_tensor(indices, weight, (n, n), device=reference.device,
+
+tests/test_deployment_path.py::test_nonzero_release_needs_only_prefix_and_no_reference_endpoint
+  /workspace/scratch/b1ba84ad294d/deliverables/RTT/src/rtt/core/environment.py:84: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+    self.P32 = torch.sparse_csr_tensor(indptr, c, vals64.to(torch.float32), size=(self.n, self.n))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+218 passed, 2 warnings in 77.75s (0:01:17)

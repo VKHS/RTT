@@ -1,0 +1,30 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "torch": "2.14.1+cpu",
+  "numpy": "2.3.5",
+  "cuda_available": false,
+  "cuda": null,
+  "gpu": null,
+  "tf32": false,
+  "numerical_status": "research_float64_output_checks_not_formally_validated_arithmetic",
+  "checked_utc": "2026-10-24T09:34:32.522265+00:00",
+  "packages": {
+    "torch": "2.14.1+cpu",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "Pillow": "12.3.0",
+    "matplotlib": "3.10.8",
+    "pandas": "2.2.3",
+    "pytest": "9.1.1",
+    "mpmath": "1.3.0",
+    "setuptools": "84.2.1",
+    "wheel": "0.48.0",
+    "ogb": null,
+    "folktables": null
+  },
+  "full_benchmark_downloads": 0,
+  "slurm_submissions": 0,
+  "test_data": "generated task-shaped fixtures and local raw-format adapter fixtures"
+}

@@ -1,0 +1,4 @@
+# Optional image tooling; the torch-only ResNet does not require torchvision.
+# Arrhenius setup installs the matching torch 2.12.1 / torchvision 0.27.1 pair first.
+torchvision>=0.20,<0.30
+Pillow>=10.3,<13

@@ -1,0 +1,27 @@
+{
+  "source_distribution": "reference_tail_trust-1.0.0.tar.gz",
+  "wheel": "reference_tail_trust-1.0.0-py3-none-any.whl",
+  "backend": "setuptools.build_meta",
+  "status": "PASS",
+  "dataset_interfaces": 10,
+  "full_configurations": 17,
+  "profile_resolutions": 51,
+  "python_syntax": 94,
+  "shell_syntax": 15,
+  "benchmark_downloads": 0,
+  "slurm_submissions": 0,
+  "archives": [
+    {
+      "file": "reference_tail_trust-1.0.0-py3-none-any.whl",
+      "members": 67
+    },
+    {
+      "file": "reference_tail_trust-1.0.0.tar.gz",
+      "members": 168
+    }
+  ],
+  "isolated_install_previously_verified": true,
+  "actual_console_script_previously_verified": true,
+  "source_provenance_bundled": true,
+  "scope": "Isolated PEP517 backend build, archive content checks, isolated wheel installation and actual installed console-script execution. The delivered repository also contains the final validation report written after this build."
+}

@@ -1,0 +1,7 @@
+# Select an appropriate CPU/CUDA torch wheel before installing this file.
+torch>=2.5,<3
+numpy>=1.26,<3
+scipy>=1.11,<2
+Pillow>=10.3,<13
+matplotlib>=3.8,<4
+mpmath==1.3.0

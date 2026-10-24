@@ -1,0 +1,58 @@
+{
+  "reconstruction_version": "1.0.0",
+  "review_date": "2026-10-24",
+  "scope": "Modular native ogbn-arxiv reconstruction and exact-reference-tail interfaces for all ten manuscript dataset/shift profiles",
+  "paper_supplement": "Appendices A-H are included in the supplied 37-page PDF",
+  "inputs": [
+    {
+      "role": "supplied_manuscript",
+      "filename": "RTT(1).pdf",
+      "bytes": 1869915,
+      "sha256": "5f79ecee86f8df9349799aa500cbb05e17cd16d122ad3a13117d96b258fe2821"
+    },
+    {
+      "role": "supplied_archive",
+      "filename": "RTT-main(1).zip",
+      "bytes": 120877,
+      "sha256": "feb01a8bf2c4fec86cfd3e315daff27da20c202b1fd03fdd8890840e70482b45"
+    },
+    {
+      "role": "source_python",
+      "filename": "run_rtt_iclr2027_arrhenius.py",
+      "bytes": 377237,
+      "sha256": "4706174fa058a0a2019b4d076c6636d82f92ba699b88181e41f191b45b670499"
+    },
+    {
+      "role": "source_shell",
+      "filename": "run_rtt_iclr2027.sh",
+      "bytes": 66730,
+      "sha256": "a5cfbea150cfc1c0067c5413a81a490d4bf54da33bc461d86adada788076b164"
+    }
+  ],
+  "unavailable_original_material": [
+    "trained weights",
+    "original experiment records",
+    "original complete environment"
+  ],
+  "formal_floating_point_validation": false,
+  "joint_implicit_KKT_training": false,
+  "dataset_interfaces": [
+    "ogbn_arxiv",
+    "good_arxiv_degree",
+    "good_arxiv_time",
+    "twitch",
+    "facebook100",
+    "elliptic",
+    "ogbn_products",
+    "imagenet_c",
+    "acs_income",
+    "ogbg_molpcba"
+  ],
+  "execution_backends": [
+    "native_arxiv_trajectory_tube",
+    "exact_reference_tail"
+  ],
+  "full_real_dataset_experiments_executed": false,
+  "arrhenius_jobs_submitted": false,
+  "original_weights_or_original_results_bundled": false
+}

@@ -1,0 +1,7 @@
+# PyTorch is installed first from the official cu130 index by setup_arrhenius.sh.
+-r base.txt
+numpy==2.2.6
+scipy==1.15.3
+matplotlib==3.10.3
+pandas==2.2.3
+tqdm==4.67.1
